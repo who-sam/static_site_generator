@@ -2,7 +2,7 @@ from enum import Enum
 from functools import reduce
 
 
-class html_node:
+class HTMLNode:
     def __init__(self, tag=None, value=None, children=None, props=None):
         self.tag = tag
         self.value = value
@@ -27,7 +27,7 @@ class html_node:
 
 
 
-class leaf_node(html_node):
+class LeafNode(HTMLNode):
     def __init__(self, tag, value, props=None):
         super().__init__(tag, value, None, props)
 
@@ -43,7 +43,7 @@ class leaf_node(html_node):
 
 
 
-class parent_node(html_node):
+class ParentNode(HTMLNode):
     def __init__(self, tag, children, props=None):
         super().__init__(tag, None, children, props)
 

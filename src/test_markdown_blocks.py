@@ -5,9 +5,9 @@ from markdown_blocks import markdown_to_blocks
 class TestMarkdownToHTML(unittest.TestCase):
     def test_markdown_to_blocks(self):
         md = """
-This is **bolded** paragraph
+This is **BOLDed** paragraph
 
-This is another paragraph with _italic_ text and `code` here
+This is another paragraph with _ITALIC_ text and `CODE` here
 This is the same paragraph on a new line
 
 - This is a list
@@ -17,20 +17,20 @@ This is the same paragraph on a new line
         self.assertEqual(
             blocks,
             [
-                "This is **bolded** paragraph",
-                "This is another paragraph with _italic_ text and `code` here\nThis is the same paragraph on a new line",
+                "This is **BOLDed** paragraph",
+                "This is another paragraph with _ITALIC_ text and `CODE` here\nThis is the same paragraph on a new line",
                 "- This is a list\n- with items",
             ],
         )
 
     def test_markdown_to_blocks_newlines(self):
         md = """
-This is **bolded** paragraph
+This is **BOLDed** paragraph
 
 
 
 
-This is another paragraph with _italic_ text and `code` here
+This is another paragraph with _ITALIC_ text and `CODE` here
 This is the same paragraph on a new line
 
 - This is a list
@@ -40,8 +40,8 @@ This is the same paragraph on a new line
         self.assertEqual(
             blocks,
             [
-                "This is **bolded** paragraph",
-                "This is another paragraph with _italic_ text and `code` here\nThis is the same paragraph on a new line",
+                "This is **BOLDed** paragraph",
+                "This is another paragraph with _ITALIC_ text and `CODE` here\nThis is the same paragraph on a new line",
                 "- This is a list\n- with items",
             ],
         )

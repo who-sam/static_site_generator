@@ -2,7 +2,7 @@ from textnode import *
 from htmlnode import *
 
 def main():
-    new_node = text_node("This is some anchor text", text_type.link, "https://www.boot.dev")
+    new_node = TextNode("This is some anchor text", TextType.LINK, "https://www.boot.dev")
     print(new_node)
 
 

@@ -1,3 +1,6 @@
+from enum import Enum
+
+
 def markdown_to_blocks(markdown):
     # lines = markdown.split("\n\n")
     lines = list(map(lambda x: x.strip(), markdown.split("\n\n")))
