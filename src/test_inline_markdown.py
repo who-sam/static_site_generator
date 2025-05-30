@@ -170,5 +170,28 @@ class TestInlineMarkdown(unittest.TestCase):
             new_nodes,
         )
 
+
+
+
+    def test_text_to_textnodes(self):
+        nodes = text_to_textnodes(
+            "This is **text** with an _italic_ word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"
+        )
+        self.assertListEqual(
+            [
+                text_node("This is ", text_type.normal),
+                text_node("text", text_type.bold),
+                text_node(" with an ", text_type.normal),
+                text_node("italic", text_type.italic),
+                text_node(" word and a ", text_type.normal),
+                text_node("code block", text_type.code),
+                text_node(" and an ", text_type.normal),
+                text_node("obi wan image", text_type.image, "https://i.imgur.com/fJRm4Vk.jpeg"),
+                text_node(" and a ", text_type.normal),
+                text_node("link", text_type.link, "https://boot.dev"),
+            ],
+            nodes,
+        )
+
 if __name__ == "__main__":
     unittest.main()
