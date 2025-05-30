@@ -3,6 +3,7 @@ from inline_markdown import *
 from textnode import *
 
 class TestInlineMarkdown(unittest.TestCase):
+    #=============== test split_nodes_delimiter =====================
     def test_delim_bold(self):
         node = text_node("This is text with a **bolded** word", text_type.normal)
         new_nodes = split_nodes_delimiter([node], "**", text_type.bold)
@@ -82,7 +83,7 @@ class TestInlineMarkdown(unittest.TestCase):
             new_nodes,
         )
 
-    #===============================================================
+    #==================== test extract_markdown_images_links ==========================
     def test_extract_markdown_images_1(self):
         matches = extract_markdown_images(
             "This is text with an ![image](https://i.imgur.com/zjjcJKZ.png)"
@@ -107,7 +108,7 @@ class TestInlineMarkdown(unittest.TestCase):
         )
         self.assertListEqual([], matches)
 
-    #=================================================================
+    #======================== test split_nodes_image_links =========================
     def test_split_images(self):
         node = text_node(
             "This is text with an ![image](https://i.imgur.com/zjjcJKZ.png) and another ![second image](https://i.imgur.com/3elNhQu.png)",
@@ -170,9 +171,7 @@ class TestInlineMarkdown(unittest.TestCase):
             new_nodes,
         )
 
-
-
-
+    #===================== test test_text_to_textnodes ============================
     def test_text_to_textnodes(self):
         nodes = text_to_textnodes(
             "This is **text** with an _italic_ word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"
