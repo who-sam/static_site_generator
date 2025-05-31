@@ -35,6 +35,10 @@ def generate_page(from_path, template_path, dest_path):
     to_file.write(template)
 
 
+def generate_pages_recursive(dir_path_content, template_path, dest_dir_path):
+    files = os.listdir(dir_path_content)
+    for file in files:
+        if os.path.isfile(file):
 
 
 
