@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from htmlnode import *
 from markdown_to_html import *
 from textnode import *
@@ -36,9 +37,23 @@ def generate_page(from_path, template_path, dest_path):
 
 
 def generate_pages_recursive(dir_path_content, template_path, dest_dir_path):
-    files = os.listdir(dir_path_content)
-    for file in files:
-        if os.path.isfile(file):
+    print(f"Processing: {dir_path_content} -> {dest_dir_path}")
+    if not os.path.exists(dest_dir_path):
+        os.makedirs(dest_dir_path, exist_ok=True)
 
+    for item in os.listdir(dir_path_content):
+        src_path = os.path.join(dir_path_content, item)
+        dest_path = os.path.join(dest_dir_path, item)
+
+        if os.path.isfile(src_path):
+            if item.endswith(".md"):
+                # Replace .md with .html for destination file
+                html_filename = item.replace(".md", ".html")
+                html_path = os.path.join(dest_dir_path, html_filename)
+                print(f"Converting: {src_path} -> {html_path}")
+                generate_page(src_path, template_path, html_path)
+        else:
+            # Recursively process directories
+            generate_pages_recursive(src_path, template_path, dest_path)
 
 
