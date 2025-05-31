@@ -88,11 +88,3 @@ def text_to_textnodes(text):
     nodes = split_nodes_link(nodes)
     return nodes
 
-# text = "This is **text** with an _ITALIC_ word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"
-# print(text_to_textnodes(text))
-node = TextNode(
-    "This is text with a [link](https://boot.dev) and [another link](https://blog.boot.dev) with text that follows",
-    TextType.TEXT,
-)
-new_nodes = split_nodes_link([node])
-print(new_nodes)
