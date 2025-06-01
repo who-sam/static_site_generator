@@ -123,14 +123,3 @@ git push origin main
 echo "Enable GitHub Pages at:"
 echo "https://github.com/$USERNAME/$REPO/settings/pages"
 ```
-- write this to bash file and use it
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Let me know if you'd like the **Usage**, **Customization**, or **Contributing** sections added as well.
