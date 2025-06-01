@@ -31,27 +31,27 @@ Make sure you have the following tools installed:
 
 ```text
 .
-├── build.sh                       # Builds the site (runs the Python generator)
-├── main.sh                        # Builds & starts local preview server on port 8888
-├── test.sh                        # Runs unit tests
-├── template.html                  # Template HTML file for every page
-├── content/                       # Markdown source files
-│   └── blog/                      # Nested structure supported
+├── build.sh       -------------------> # Builds the site (runs the Python generator)
+├── main.sh       --------------------> # Builds & starts local preview server on port 8888
+├── test.sh       --------------------> # Runs unit tests
+├── template.html       --------------> # Template HTML file for every page
+├── content/       -------------------> # Markdown source files
+│   └── blog/       ------------------> # Nested structure supported
 │       └── .../index.md
-├── static/                        # Static files (CSS, images, favicon, etc.)
-│   └── index.css                  # Global stylesheet
-├── docs/                          # Output directory (auto-generated)
-│   └── ...                        # Final HTML pages and assets
-├── src/                           # Python source code
-│   ├── main.py                    # Entry point of the generator
-│   ├── copystatic.py              # Copies static assets to docs/
-│   ├── generating_html.py         # Markdown-to-HTML rendering logic
+├── static/       --------------------> # Static files (CSS, images, favicon, etc.)
+│   └── index.css       --------------> # Global stylesheet
+├── docs/       ----------------------> # Output directory (auto-generated)
+│   └── ...       --------------------> # Final HTML pages and assets
+├── src/       -----------------------> # Python source code
+│   ├── main.py       ----------------> # Entry point of the generator
+│   ├── copystatic.py       ----------> # Copies static assets to docs/
+│   ├── generating_html.py              # Markdown-to-HTML rendering logic
 │   ├── markdown_blocks.py
 │   ├── markdown_to_html.py
 │   ├── htmlnode.py
 │   ├── textnode.py
 │   ├── inline_markdown.py
-│   └── test_*.py                  # Unit tests for individual components
+│   └── test_*.py       --------------> # Unit tests for individual components
 ```
 
 ---
@@ -93,13 +93,14 @@ Runs all the unit tests using Python's `unittest`.
 
 ## Deploy to GitHub Pages
 
-1. Push your repo to GitHub.
-2. On the GitHub repo page, go to **Settings > Pages**.
-3. Under **Source**, choose:
+1. create a new GitHub repo
+2. Push your project directory to GitHub.
+3. On the GitHub repo page, go to **Settings > Pages**.
+4. Under **Source**, choose:
 
    * Branch: `main`
    * Folder: `/docs`
-4. Save the settings.
+5. Save the settings.
 
 Your site will be live at:
 `https://<your-username>.github.io/<repo-name>/`
@@ -122,6 +123,7 @@ git push origin main
 echo "Enable GitHub Pages at:"
 echo "https://github.com/$USERNAME/$REPO/settings/pages"
 ```
+- write this to bash file and use it
 
 ---
 
