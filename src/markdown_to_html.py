@@ -25,21 +25,7 @@ def markdown_to_html_node(markdown):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#==================== implemented ====================
+#==================== helpers ====================
 def text_to_children(text):
     text_nodes = text_to_textnodes(text)
     children = list(map(TextNode_to_HTMLNode, text_nodes))
