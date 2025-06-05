@@ -10,6 +10,7 @@ def split_nodes_delimiter(old_nodes, delimiter, TextType):
         else:
             splitted_node_text = node.text.split(delimiter)
             if len(splitted_node_text) % 2 == 0:
+                print(splitted_node_text)
                 raise Exception("Invalid MD Syntax: openning delimiter without closing it")
             for i in range(0,len(splitted_node_text)):
                 if splitted_node_text[i] == "":
